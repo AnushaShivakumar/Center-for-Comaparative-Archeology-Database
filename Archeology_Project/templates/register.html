@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <title> Registration Page </title>
+  </header>
+  <style>
+    .divider:after,
+    .divider:before {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #eee;
+    }
+
+    .h-custom {
+      height: calc(100% - 73px);
+    }
+
+    @media (max-width: 450px) {
+      .h-custom {
+        height: 100%;
+      }
+    }
+
+  </style>
+
+  <body>
+
+
+    <section class="vh-100">
+      <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-md-9 col-lg-6 col-xl-5">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+              class="img-fluid" alt="Sample image">
+          </div>
+          {% for message in get_flashed_messages() %}
+            {{ message` }}
+          {% endfor %}
+
+          {% if firstName %}
+            <h1>{{  firstName  }} is already registered.</h1>
+          {% else %}
+          <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <form method="POST">
+              {{  form.hidden_tag() }}
+
+
+              <br><br><br>
+
+              <!-- First Name -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3">Enter your First Name</label>
+                <input type="text" id="form3Example3" class="form-control form-control-lg"
+                  placeholder="Enter your first name" />
+
+              </div>
+
+
+              <!-- Last Name -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3">Enter your Last Name</label>
+                <input type="text" id="form3Example3" class="form-control form-control-lg"
+                  placeholder="Enter your last name" />
+
+              </div>
+
+              <!-- Organisation Name -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3">Enter your Organisation Name</label>
+                <input type="text" id="form3Example3" class="form-control form-control-lg"
+                  placeholder="Enter your Organisation name" />
+
+              </div>
+
+              <!-- Affiliation Name -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3">Affiliation</label>
+                <select name="Affiliation" id="form3Example3" class="form-control form-control-lg">
+                  <option value="Select a Affiliation">Select a Affiliation</option>
+                  <option value="K-12 Student">K-12 Student</option>
+                  <option value="Undergraduate Student">Undergraduate Student</option>
+                  <option value="Graduate student">Graduate student</option>
+                  <option value="K-12 Teacher">K-12 Teacher</option>
+                  <option value="Higher Ed. Faculty">Higher Ed. Faculty</option>
+                  <option value="Independent Researcher">Independent Researcher</option>
+                  <option value="Public Agency Archeologist">Public Agency Archeologist</option>
+                  <option value="NonProfessional/Avocational Archeologist">NonProfessional/Avocational Archeologist</option>
+                  <option value="General Public">General Public</option>
+                  <option value="Native American/Indigenous researcher">Native American/Indigenous researcher</option>
+                </select>
+
+              </div>
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <label class="form-label" for="form3Example3">Enter your Email</label>
+                <input type="email" id="form3Example3" class="form-control form-control-lg"
+                  placeholder="Email" />
+
+              </div>
+
+              <!-- Password 1 input -->
+              <div class="form-outline mb-3">
+                <label class="form-label" for="form3Example4">Enter your Password</label>
+                <input type="password" id="form3Example4" class="form-control form-control-lg"
+                  placeholder="Enter your password" />
+
+              </div>
+
+              <!-- Password 2 input -->
+              <div class="form-outline mb-3">
+                <label class="form-label" for="form3Example4">Confirm Password</label>
+                <input type="password" id="form3Example4" class="form-control form-control-lg"
+                  placeholder="Confirm your password" />
+
+              </div>
+
+
+              <div class="text-center text-lg-start mt-4 pt-2">
+                <button type="button" class="btn btn-primary btn-lg"
+                  style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
+                <p class="small fw-bold mt-2 pt-1 mb-0">Have an account? <a href="login.html"
+                    class="link-danger">Login</a></p>
+              </div>
+
+            </form>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+
+
+      </div>
+    </section>
+
+
+
+    <!-- Link to Bootstrap JS and Popper.js (if needed) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+  </body>
+
+
+</html>
